@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Data</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa; /* Light background color */
+        color: #343a40; /* Dark text color */
+        display: flex; /* Use flexbox for centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        height: 100vh; /* Full height */
+        overflow: hidden; /* Prevent scrollbars during animation */
+      }
+      .content-wrapper {
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        border-radius: 20px; /* Slightly rounded corners */
+        padding: 20px; /* Padding inside the box */
+        box-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.1),
+          0 0 30px rgba(255, 105, 180, 0.5),
+          0 0 60px rgba(0, 123, 255, 0.5); /* Multi-colored shadows for a 3D effect */
+        width: 250px; /* Width of the card */
+        text-align: center; /* Center text */
+        animation: bounceInOut 3s infinite; /* Bounce-in and out animation */
+      }
+
+      /* Bounce In and Out Animation */
+      @keyframes bounceInOut {
+        0%,
+        100% {
+          transform: scale(1); /* Normal size */
+        }
+        25% {
+          transform: scale(1.1); /* Slightly larger */
+        }
+        50% {
+          transform: scale(1.05); /* Slightly smaller */
+        }
+        75% {
+          transform: scale(1.1); /* Slightly larger again */
+        }
+      }
+      h1 {
+        font-weight: bold; /* Bold text */
+        text-transform: uppercase; /* Uppercase text */
+        background: linear-gradient(
+          90deg,
+          #ff0000,
+          #0000ff
+        ); /* Blue and red gradient */
+        -webkit-background-clip: text; /* Clip background to text */
+        -webkit-text-fill-color: transparent; /* Fill text with gradient */
+        font-size: 1.5em; /* Adjusted font size */
+      }
+      p {
+        font-size: 1em; /* Adjusted font size for smaller card */
+      }
+
+      #contentpara {
+        color: #080103;
+      }
+
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #25d366c9;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+
+      .whatsapp-btn:hover {
+        background-color: #1ebe5d;
+        color: white;
+      }
+
+      .email-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #dc35459c;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+
+      .email-btn:hover {
+        background-color: #d33426;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Function to display the content
+      function displayContent() {
+        document.getElementById("content").style.display = "block";
+      }
+
+      // Function to clear the content
+      function clearContent() {
+        document.getElementById("content").style.display = "none";
+      }
+
+      // Check how many times the page has been viewed
+      window.onload = function () {
+        let viewCount = localStorage.getItem("viewCount") || 0;
+
+        if (viewCount == 0) {
+          displayContent(); // Show content on the first visit
+        } else if (viewCount == 1) {
+          clearContent(); // Clear content on the second visit
+        }
+
+        // Increment the view count and store it
+        localStorage.setItem("viewCount", ++viewCount);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="content" style="display: none" class="container content-wrapper">
+      <h1>Attention</h1>
+      <p id="contentpara">
+        As you are well aware that Fiverr does not allow academic work, and in
+        order to complete this project, I need to make a deal with you outside
+        Fiverr. I have 5 years of experience helping students with quizzes,
+        exams, and projects.
+      </p>
+
+      <a href="https://wa.me/923137482324" target="_blank" class="whatsapp-btn">
+        <img
+          src="https://img.icons8.com/color/48/000000/whatsapp.png"
+          width="20"
+        />
+        Chat on WhatsApp
+      </a>
+
+      <a href="mailto:nexomarketing555@gmail.com" class="email-btn">
+        <img
+          src="https://img.icons8.com/color/48/000000/gmail-new.png"
+          width="20"
+        />
+        Email Us
+      </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
